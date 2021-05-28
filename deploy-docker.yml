@@ -1,5 +1,5 @@
 ---
-  - hosts: 10.87.3.146
+  - hosts: 10.87.3.47
     become: true
     tasks:
 
