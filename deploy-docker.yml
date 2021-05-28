@@ -3,6 +3,8 @@
     become: true
     tasks:
 
+    - name: remove old deployment
+      command: kubectl delete -f /root/kube-yml/deployweb.yml
     - name: create a deployment
       command: kubectl apply -f /root/kube-yml/deployweb.yml
 
