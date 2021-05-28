@@ -1,13 +1,9 @@
 ---
-  - hosts: 10.87.3.47
+  - hosts: 10.87.7.5
     become: true
     tasks:
 
-    - name: stop previous version docker
-      shell: docker stop k8s-test
-    - name: remove stopped container
-      shell: docker rm -f k8s-test
-    - name: remove docker images
-      shell: docker image rm -f bijuvinoth/k8s-pipeline:latest
-    - name: create docker image
-      shell: docker run -d --name k8s-test -p 8080:8080 bijuvinoth/k8s-pipeline:latest
+    - name: create a deployment
+      command: kubectl apply -f /root/kube-yml/deployweb.yml
+
+      
