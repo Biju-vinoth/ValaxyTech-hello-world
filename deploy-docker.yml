@@ -1,0 +1,13 @@
+---
+  - hosts: 10.87.3.146
+    become: true
+    tasks:
+
+    - name: stop previous version docker
+      shell: docker stop MPC-test
+    - name: remove stopped container
+      shell: docker rm -f MPC-test
+    - name: remove docker images
+      shell: docker image rm -f bijuvinoth/mpctest:latest
+    - name: create docker image
+      shell: docker run -d --name MPC-test -p 5000:5000 bijuvinoth/mpctest:latest
