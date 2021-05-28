@@ -10,4 +10,4 @@
     - name: remove docker images
       shell: docker image rm -f bijuvinoth/k8s-pipeline:latest
     - name: create docker image
-      shell: docker run -d --name MPC-test -p 5000:5000 bijuvinoth/k8s-pipeline:latest
+      shell: docker run -d --name k8s-test -p 8080:8080 bijuvinoth/k8s-pipeline:latest
