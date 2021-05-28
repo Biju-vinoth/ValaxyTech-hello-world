@@ -1,7 +1,11 @@
 pipeline{
-    agent any
-    
-    stages{
+    agent any  
+    stages{    
+        stage('Maven Build'){
+            steps{
+                sh "mvn clean package"
+            }
+        }
         stage('Docker Build'){     
             steps{
                 sh "docker build . -t $JOB_NAME:v1.$BUILD_ID"
