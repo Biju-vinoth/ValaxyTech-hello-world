@@ -23,7 +23,7 @@ pipeline{
                 sh "docker rmi $JOB_NAME:v1.$BUILD_ID bijuvinoth/$JOB_NAME:v1.$BUILD_ID bijuvinoth/$JOB_NAME:latest"
             }
         }
-        stage('Docker Deploy'){
+        stage('K8S Deploy'){
             steps{
               ansiblePlaybook credentialsId: 'Docker-server', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'deploy-docker.yml'
             }
