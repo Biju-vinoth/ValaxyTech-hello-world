@@ -1,7 +1,3 @@
 # maven-project
 
-Simple Maven Project
-
-Hi..
-
-This is test1
+K8S CICD project...
